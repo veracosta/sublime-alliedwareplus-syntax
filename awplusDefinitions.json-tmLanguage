@@ -1,0 +1,145 @@
+{ 
+	"name": "awplus",
+ 	"scopeName": "text.awplus",
+ 	"fileTypes": ["cfg"],
+	"patterns": [
+
+		{ "match": "no spanning-tree rstp enable",
+			"name": "invalid.illegal.awplus"
+		},
+
+		{ "match": "^\\s*no(?=\\s)",
+			"name": "invalid.illegal.awplus"
+		},
+
+		{ "match": "^hostname ",
+			"name": "support.function.awplus"
+		},
+
+		{ "match": "(?<=hostname )(.*)",
+			"name": "variable.parameter.awplus"
+		},
+
+		{ "match": "^username ",
+			"name": "support.function.awplus"
+		},
+
+		{ "match": "(?<=username )\\S*",
+			"name": "variable.parameter.awplus"
+		},
+
+		{ "match": "(?<=no )service ",			"name": "markup.bold.awplus"
+		},
+
+		{ "match": "access-list",
+			"name": "support.function.awplus"
+		},
+
+		{ "match": "( port| sa| po| vlan| eth\\d| lo(\\s|\\n))",
+			"name": "string.unquoted.awplus"
+		},
+		{ "match": "(?<=port)\\d",
+			"name": "variable.parameter.awplus"
+		},
+		{ "match": "(?<=port\\d\\.)\\d{1,2}",
+			"name": "storage.type.awplus"
+		},
+
+		{ "match": "(?<=port\\d\\.\\d\\.)\\d{1,2}|(?<=\\.)\\d{1,2}(?=\\.)$",
+			"name": "constant.numeric.awplus"
+		},
+
+		{ "match": "(?<=port\\d\\.\\d\\d\\.)\\d{1,2}|(?<=\\.)\\d{1,2}$",
+			"name": "constant.numeric.awplus"
+		},
+
+		{ "match": "crypto ",
+			"name": "string.unquoted.awplus"
+		},
+		{ "match": "any",
+			"name": "string.unquoted.awplus"
+		},
+		{ "match": "deny ",
+			"name": "support.constant.awplus"
+		},
+
+		{ "match": "permit ",
+			"name": "constant.character.escape.awplus"
+		},
+		{ "match": "object-group",
+			"name": "markup.list.awplus"
+		},
+		{ "match": "object",
+			"name": "markup.list.awplus"
+		},
+
+		{ "match": "(?<=switchport mode ).*",
+			"name": "support.type.awplus"
+		},
+
+		{ "match": "host",
+			"name": "markup.list.awplus"
+		},
+
+		{ "match": "^[\\s]*!(.*)",
+			"name": "comment.awplus"
+		},
+		{ "match": "static",
+			"name": "constant.numeric.awplus"
+		},
+
+		{ "match": "tunnel-group",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "crypto",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "\\d+\\.\\d+\\.\\d+\\.\\d+?",
+			"name": "constant.numeric.awplus"
+		},
+
+		{ "match": "(/\\d{1,2})|(/\\d{1,3})",
+			"name": "keyword.awplus"
+		},
+
+		{ "match": "[0-9a-fA-F]{0,4}:([0-9a-fA-F]{0,4}:)+[0-9a-fA-F]{0,4}?",
+			"name": "constant.numeric.awplus"
+		},
+
+		{ "match": "^aaa accounting auth-mac |^aaa accounting auth-web |^aaa accounting commands |^aaa accounting dot1x |^aaa accounting login |^aaa accounting update |^aaa authentication auth-mac |^aaa authentication auth-web |^aaa authentication dot1x |^aaa authentication enable default group tacacs |^aaa authentication enable default local|^aaa authentication login |^aaa group server radius |^aaa local authentication attempts lockout-time |^aaa local authentication attempts max-fail |^accept-lifetime |^access-group |^access-group insert-before |^access-list extended |^access-list hardware |^access-list standard |^access-list |^accounting login |^activate |^active |^address prefix |^address range |^address-family ipv4 |^address-family ipv6 |^advertisement-interval |^aggregate-address |^area authentication |^area authentication ipsec |^area default-cost |^area encryption ipsec |^area filter-list |^area nssa |^area range |^area stub |^area virtual-link |^area virtual-link authentication ipsec |^area virtual-link encryption ipsec |^arp |^arp log |^arp security |^arp security violation |^arp-aging-timeout |^arp-mac-disparity |^atmf backup |^atmf backup bandwidth |^atmf backup enable |^atmf backup now |^atmf backup server |^atmf backup stop |^atmf backup synchronize |^atmf cleanup |^atmf distribute firmware |^atmf domain vlan |^atmf enable |^atmf group |^atmf management subnet |^atmf management vlan |^atmf master |^atmf network-name |^atmf provision |^atmf provision node clone |^atmf provision node configure boot config |^atmf provision node configure boot system |^atmf provision node create |^atmf provision node delete |^atmf provision node license-cert |^atmf provision node locate |^atmf reboot-rolling |^atmf recover |^atmf recover led-off |^atmf remote-login |^atmf restricted-login |^atmf virtual-link |^atmf working-set |^auth auth-fail vlan |^auth critical |^auth dynamic-vlan-creation |^auth guest-vlan |^auth host-mode |^auth log |^auth max-supplicant |^auth reauthentication |^auth roaming disconnected |^auth roaming enable |^auth supplicant-mac |^auth timeout connect-timeout |^auth timeout quiet-period |^auth timeout reauth-period |^auth timeout server-timeout |^auth timeout supp-timeout |^auth two-step enable |^auth-mac enable |^auth-mac method |^auth-mac password |^auth-mac reauth-relearning |^auth-mac username |^auth-web enable |^auth-web forward |^auth-web max-auth-fail |^auth-web method |^auth-web-server dhcp ipaddress |^auth-web-server dhcp lease |^auth-web-server dhcp wpad-option |^auth-web-server intercept-port |^auth-web-server ipaddress |^auth-web-server login-url |^auth-web-server page logo |^auth-web-server page sub-title |^auth-web-server page success-message |^auth-web-server page title |^auth-web-server page welcome-message |^auth-web-server ping-poll enable |^auth-web-server ping-poll failcount |^auth-web-server ping-poll interval |^auth-web-server ping-poll reauth-timer-refresh |^auth-web-server ping-poll timeout |^auth-web-server port |^auth-web-server redirect-delay-time |^auth-web-server redirect-url |^auth-web-server session-keep |^auth-web-server ssl |^authentication |^auto-cost reference-bandwidth |^auto-summary |^banner exec |^banner login |^banner motd |^bgp aggregate-nexthop-check |^bgp always-compare-med |^bgp bestpath as-path ignore |^bgp bestpath compare-confed-aspath |^bgp bestpath compare-routerid |^bgp bestpath med |^bgp bestpath med remove-recv-med |^bgp bestpath med remove-send-med |^bgp client-to-client reflection |^bgp cluster-id |^bgp confederation identifier |^bgp confederation peers |^bgp damp-peer-oscillation |^bgp default ipv4-unicast |^bgp default local-preference |^bgp deterministic-med |^bgp enforce-first-as |^bgp fast-external-failover |^bgp graceful-restart |^bgp graceful-restart graceful-reset |^bgp graceful-restart restart-time |^bgp graceful-restart stalepath-time |^bgp log-neighbor-changes |^bgp memory maxallocation |^bgp nexthop-trigger delay |^bgp nexthop-trigger enable |^bgp nexthop-trigger-count |^bgp router-id |^bgp scan-time |^bgp update-delay |^boot config-file |^boot system |^bootfile |^capability restart |^card enable |^cd |^channel-group |^circuit-failover |^cisco-metric-behavior |^\\s{0,3}class |^class-map |^clear aaa local user lockout |^clear arp security statistics |^clear arp-cache |^clear atmf links statistics |^clear bgp |^clear bgp ipv6 |^clear counter ipv6 dhcp-client |^clear counter ipv6 dhcp-server |^clear counter stack |^clear exception log |^clear gvrp statistics |^clear ip bgp |^clear ip dhcp binding |^clear ip dhcp snooping binding |^clear ip dhcp snooping statistics |^clear ip dns forwarding cache |^clear ip igmp |^clear ip mroute |^clear ip mroute statistics |^clear ip ospf process |^clear ip pim sparse-mode bsr rp-set |^clear ip prefix-list |^clear ip rip route |^clear ipv6 dhcp binding |^clear ipv6 dhcp client |^clear ipv6 mld |^clear ipv6 mroute |^clear ipv6 mroute pim sparse-mode |^clear ipv6 mroute statistics |^clear ipv6 multicast route |^clear ipv6 neighbors |^clear ipv6 ospf process |^clear ipv6 pim sparse-mode bsr rp-set |^clear ipv6 prefix-list |^clear ipv6 rip route |^clear lacp counters |^clear line console |^clear line vty |^clear lldp statistics interface |^clear lldp table interface |^clear log |^clear loop-protection counters |^clear mac address-table |^clear mls qos interface policer-counters |^clear ping-poll |^clear port counter |^clear power-inline counters interface |^clear radius local-server statistics |^clear spanning-tree detected protocols |^clear ssh |^clock set |^clock timezone |^commit |^compatible rfc1583 |^configure terminal |^copy |^critical-interval |^crypto key destroy hostkey |^crypto key destroy userkey |^crypto key generate hostkey |^crypto key generate userkey |^crypto key pubkey-chain knownhosts |^crypto key pubkey-chain userkey |^crypto pki enroll local |^crypto pki enroll local local-radius-all-users |^crypto pki enroll local user |^crypto pki export local pem url |^crypto pki export local pkcs12 |^crypto pki trustpoint local |^day |^deadtime |^default log |^default-action |^default-information originate |^default-metric |^default-router |^delete |^delete mail |^description |^dir |^disable |^distance ",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "^distribute-list |^dns-server |^do |^domain-name |^dot1x control-direction |^dot1x eap |^dot1x eapol-version |^dot1x max-auth-fail |^dot1x max-reauth-req |^dot1x port-control |^dot1x timeout tx-period |^duplex |^echo |^ecofriendly led |^ecofriendly lpi |^edit |^egress-rate-limit |^egress-vlan-id |^egress-vlan-name |^enable |^enable db-summary-opt |^enable password |^enable secret |^end |^epsr |^epsr configuration |^epsr datavlan |^epsr enhancedrecovery enable |^epsr mode master |^epsr mode transit |^epsr priority |^epsr state |^epsr trap |^erase proxy-autoconfig-file |^erase startup-config |^erase web-auth-https-file |^exec-timeout |^exit |^exit-address-family |^export map |^fail-count |^flowcontrol |^group |^gvrp |^gvrp dynamic-vlan-creation |^gvrp enable |^gvrp registration |^gvrp timer |^help |^host |^hostname |^import map |^instance priority |^instance vlan |^interface |^ip |^\\s{0,3}ip address |^\\s{0,3}ip address dhcp |^ip as-path access-list |^ip community-list expanded |^ip community-list standard |^ip community-list |^ip dhcp bootp ignore |^ip dhcp option |^ip dhcp pool |^ip dhcp snooping |^ip dhcp snooping agent-option |^ip dhcp snooping agent-option allow-untrusted |^ip dhcp snooping agent-option circuit-id vlantriplet |^ip dhcp snooping agent-option remote-id |^ip dhcp snooping binding |^ip dhcp snooping database |^ip dhcp snooping delete-by-client |^ip dhcp snooping delete-by-linkdown |^ip dhcp snooping max-bindings |^ip dhcp snooping subscriber-id |^ip dhcp snooping trust |^ip dhcp snooping verify mac-address |^ip dhcp snooping violation |^ip dhcp-relay agent-option |^ip dhcp-relay agent-option checking |^ip dhcp-relay agent-option remote-id |^ip dhcp-relay information policy |^ip dhcp-relay max-message-length |^ip dhcp-relay maxhops |^ip dhcp-relay server-address |^ip directed-broadcast |^ip dns forwarding |^ip dns forwarding cache |^ip dns forwarding dead-time |^ip dns forwarding retry |^ip dns forwarding source-interface |^ip dns forwarding timeout |^ip domain-list |^ip domain-lookup |^ip domain-name |^ip forward-protocol udp |^ip forwarding |^ip gratuitous-arp-link |^ip helper-address |^ip igmp |^ip igmp access-group |^ip igmp flood specific-query |^ip igmp immediate-leave |^ip igmp last-member-query-count |^ip igmp last-member-query-interval |^ip igmp limit |^ip igmp mroute-proxy |^ip igmp proxy-service |^ipigmp querier-timeout |^ip igmp query-holdtime |^ip igmp query-interval |^ip igmp query-max-response-time |^ip igmp robustness-variable |^ip igmp snooping |^ip igmp snooping fast-leave |^ip igmp snooping mrouter interface |^ip igmp snooping querier |^ip igmp snooping report-suppression |^ip igmp snooping routermode |^ip igmp snooping routermode address |^ip igmp snooping source-timeout |^ip igmp snooping tcn query solicit |^ip igmp snooping tcn query solicit root |^ip igmp source-address-check |^ip igmp ssm |^ip igmp ssm-map enable |^ip igmp ssm-map static |^ip igmp static-group |^ip igmp version |^ip irdp |^ip irdp address preference |^ip irdp broadcast |^ip irdp holdtime |^ip irdp lifetime |^ip irdp maxadvertinterval |^ip irdp minadvertinterval |^ip irdp multicast |^ip irdp preference |^ip local-proxy-arp |^ip mroute |^ip multicast forward-first-packet |^ip multicast route |^ip multicast route-limit |ip multicast-routing|^ip multicast-routing border |^ip name-server |^ip ospf authentication |^ip ospf authentication-key |^ip ospf cost |^ip ospf database-filter |^ip ospf dead-interval |^ip ospf disable all |^ip ospf hello-interval |^ip ospf message-digest-key |^ip ospf mtu |^ip ospf mtu-ignore |^ip ospf network |^ip ospf priority |^ip ospf retransmit-interval |^ip ospf transmit-delay |^ip pim accept-register list |^ip pim bsr-candidate |^ip pim cisco-register-checksum |^ip pim crp-cisco-prefix |^ip pim dense-mode |^ip pim dr-priority |^ip pim exclude-genid |^ip pim hello-holdtime |^ip pim hello-interval |^ip pim ignore-rp-set-priority |^ip pim jp-timer |^ip pim max-graft-retries |^ip pim neighbor-filter |^ip pim propagation-delay |^ip pim register-rate-limit |^ip pim register-rp-reachability |^ip pim register-source |^ip pim register-suppression |^ip pim rp-address |^ip pim rp-candidate |^ip pim rp-register-kat |^ip pim sparse-mode |^ip pim spt-threshold |^ip pim ssm |^ip pim state-refresh origination-interval |^ip prefix-list |^ip proxy-arp |^ip radius source-interface |^ip rip authentication key-chain |^ip rip authentication mode |^ip rip authentication string |^ip rip receive version |^ip rip receive-packet |^ip rip send version |^ip rip send-packet |^ip rip split-horizon |^ip route |^ip route static inter-vrf |^ip source binding |^ip vrf |^ip vrf forwarding |^ipv6 access-list standard |^ipv6 access-list |^ipv6 address |^ipv6 address autoconfig |^ipv6 address dhcp |^ipv6 dhcp client pd |^ipv6 dhcp option |^ipv6 dhcp pool |^ipv6 dhcp server |^ipv6 enable |^ipv6 forwarding |^ipv6 local pool |^ipv6 mld |^ipv6 mld access-group |^ipv6 mld immediate-leave |^ipv6 mld last-member-query-count |^ipv6 mld last-member-query-interval |^ipv6 mld limit |^ipv6 mld querier-timeout |^ipv6 mld query-interval |^ipv6 mld query-max-response-time |^ipv6 mld robustness-variable |^ipv6 mld snooping |^ipv6 mld snooping fast-leave |^ipv6 mld snooping mrouter interface |^ipv6 mld snooping querier |^ipv6 mld snooping report-suppression |^ipv6 mld static-group |^ipv6 mld version |^ipv6 multicast route |^ipv6 multicast route-limit |^ipv6 multicast-routing |^ipv6 nd managed-config-flag |^ipv6 nd other-config-flag |^ipv6 nd prefix |^ipv6 nd ra-interval |^ipv6 nd ra-lifetime |^ipv6 nd raguard |^ipv6 nd reachable-time |^ipv6 nd suppress-ra |^ipv6 neighbor |^ipv6 ospf authentication ipsec |^ipv6 ospf cost |^ipv6 ospf dead-interval |^ipv6 ospf display route single-line |^ipv6 ospf encryption ipsec |^ipv6 ospf hello-interval |^ipv6 ospf priority |^ipv6 ospf retransmit-interval |^ipv6 ospf transmit-delay |^ipv6 pim accept-register list |^ipv6 pim bsr-border |^ipv6 pim bsr-candidate ",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "^ipv6 pim cisco-register-checksum |^ipv6 pim crp-cisco-prefix |^ipv6 pim dr-priority |^ipv6 pim exclude-genid |^ipv6 pim ext-srcs-directly-connected |^ipv6 pim hello-holdtime |^ipv6 pim hello-interval |^ipv6 pim ignore-rp-set-priority |^ipv6 pim jp-timer |^ipv6 pim neighbor-filter |^ipv6 pim register-rate-limit |^ipv6 pim register-rp-reachability |^ipv6 pim register-source |^ipv6 pim register-suppression |^ipv6 pim rp embedded |^ipv6 pim rp-address |^ipv6 pim rp-candidate |^ipv6 pim rp-register-kat |^ipv6 pim sparse-mode |^ipv6 pim spt-threshold |^ipv6 pim unicast-bsm |^ipv6 prefix-list |^ipv6 rip metric-offset |^ipv6 rip split-horizon |^ipv6 route |^ipv6 router ospf area |^ipv6 router rip |^ipv6 traffic-filter |^ipv6 traffic-filter insert-before |^issu abort-timeout |^issu boot |^issu rejoin-timeout |^key |^key chain |^key-string |^lacp port-priority |^lacp system-priority |^lacp timeout |^lease |^length |^license |^line console |^line vty |^link-address |^linkflap action |^lldp faststart-count |^lldp holdtime-multiplier |^lldp management-address |^lldp med-notifications |^lldp med-tlv-select |^lldp non-strict-med-tlv-order-check |^lldp notification-interval |^lldp notifications |^lldp port-number-type |^lldp receive |^lldp reinit |^lldp run |^lldp timer |^lldp tlv-select |^lldp transmit |^lldp tx-delay |^location civic-location identifier |^location civic-location |^location civic-location-id |^location coord-location identifier |^location coord-location |^location coord-location-id |^location elin-location identifier |^location elin-location-id |^log |^log host startup-delay |^log size |^log time |^log-rate-limit nsm |^login authentication |^logout |^loop-protection |^loop-protection action |^loop-protection action-delay-time |^loop-protection timeout |^mac address-table acquire |^mac address-table ageing-time |^mac address-table static |^mac address-table thrash-limit |^mail |^mail from |^mail smtpserver |^\\s{0,3}match access-group |^\\s{0,3}match as-path |^\\s{0,3}match community |^\\s{0,3}match cos |^\\s{0,3}match dscp |^\\s{0,3}match eth-format protocol |^\\s{0,3}match inner-cos |^\\s{0,3}match inner-tpid |^\\s{0,3}match inner-vlan |^\\s{0,3}match interface |^\\s{0,3}match ip address |^\\s{0,3}match ip next-hop |^\\s{0,3}match ip-precedence |^\\s{0,3}match ipv6 address |^\\s{0,3}match ipv6 next-hop |^\\s{0,3}match mac-type |^\\s{0,3}match metric |^\\s{0,3}match origin |^\\s{0,3}match route-type |^\\s{0,3}match tag |^\\s{0,3}match tcp-flags |^\\s{0,3}match tpid |^\\s{0,3}match vlan |^max-concurrent-dd |^maximum-paths |^mirror interface |^mkdir |^mls qos aggregate-police counters |^mls qos aggregate-police single-rate |^mls qos aggregate-police twin-rate |^mls qos backplane-queue |^mls qos cos |^mls qos enable|^mls qos map cos-queue |^mls qos map premark-dscp |^mls qos queue |^mls qos scheduler-set |^mls qos scheduler-set priority-queue |^mls qos scheduler-set wrr-queue group |^move |^mtu |^multicast |^nas |^neighbor |^neighbor activate |^neighbor advertisement-interval |^neighbor allowas-in |^neighbor as-origination-interval |^neighbor attribute-unchanged |^neighbor capability graceful-restart |^neighbor capability orf prefix-list |^neighbor capability route-refresh |^neighbor default-originate |^neighbor description |^neighbor disallow-infinite-holdtime |^neighbor distribute-list |^neighbor dont-capability-negotiate |^neighbor ebgp-multihop |^neighbor filter-list |^neighbor interface |^neighbor maximum-prefix |^neighbor next-hop-self |^neighbor override-capability |^neighbor passive |^neighbor password |^neighbor peer-group |^neighbor port |^neighbor prefix-list |^neighbor remote-as |^neighbor remove-private-as |^neighbor restart-time |^neighbor route-map |^neighbor route-reflector-client |^neighbor send-community |^neighbor shutdown |^neighbor soft-reconfiguration inbound |^neighbor timers |^neighbor transparent-as |^neighbor transparent-nexthop |^neighbor unsuppress-map |^neighbor update-source |^neighbor weight | |^network |^network synchronization |^next-server |^normal-interval |^ntp access-group |^ntp broadcastdelay |^ntp master |^ntp peer |^ntp server |^ntp source |^offset-list |^option |^ospf abr-type |^ospf restart grace-period |^ospf restart helper |^ospf router-id |^overflow database |^overflow database external |^passive-interface |^ping |^ping-poll |^platform jumboframe |^platform load-balancing |^platform routingratio |^platform silicon-profile |^platform vlan-stacking-tpid |^polarity |^police counters |^police single-rate |^police twin-rate |^police-aggregate |^policy-map |^power-inline allow-legacy |^power-inline description |^power-inline enable |^power-inline max |^power-inline priority |^power-inline usage-threshold |^preempt-mode |^prefix-delegation pool |^priority |^private-vlan |^private-vlan association |^probe enable |^probe packets |^probe timeout |^probe type |^pwd |^radius-server deadtime |^radius-server host |^radius-server key |^radius-server local |^radius-server retransmit |^radius-server timeout |^range |^rd |^reboot |^redistribute |^region |^reload |^remote-login |^repeat |^restart bgp graceful |^restart ipv6 ospf graceful |^restart ospf graceful |^restart rip graceful |^revision |^rip restart grace-period |^rmdir |^rmon alarm |^rmon collection history |^rmon collection stats |^rmon event |^route-map |^route-target |^router bgp |^router ip irdp |^router ipv6 ospf |^router ipv6 rip |^router ipv6 vrrp |^router ospf |^router rip |^router vrrp |^router-id |^sample-size ",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "^script |^security-password forced-change |^security-password history |^security-password lifetime |^security-password minimum-categories |^security-password minimum-length |^security-password reject-expired-pwd |^security-password warning |^send-lifetime |^server |^server auth-port |^server enable |service-policy input |^set aggregator as |^set as-path prepend |^set atomic-aggregate |^set bandwidth-class |^set comm-list delete |^set community |^set cos |^set dscp |^set ip next-hop |^set local-preference |^set metric |^set metric-type |^set origin |^set originator-id |^set queue |^set tag |^set weight |^sflow agent |^sflow collector |^sflow collector max-datagram-size |^sflow enable |^sflow max-header-size |^sflow polling-interval |^sflow sampling-rate |^shutdown |^snmp trap link-status |^snmp trap link-status suppress |^snmp trap link-status trap-delay |^snmp-server |^snmp-server community |^snmp-server contact |^snmp-server enable trap |^snmp-server engineid local |^snmp-server group |^snmp-server host |^snmp-server location |^snmp-server source-interface |^snmp-server startup-trap-delay |^snmp-server user |^snmp-server view |^sntp-address |^source-ip |^spanning-tree autoedge |^spanning-tree cisco-interoperability |^spanning-tree edgeport |^spanning-tree enable |^spanning-tree errdisable-timeout enable |^spanning-tree errdisable-timeout interval |^spanning-tree force-version |^spanning-tree forward-time |^spanning-tree guard root |^spanning-tree hello-time |^spanning-tree link-type |^spanning-tree max-age |^spanning-tree max-hops |^spanning-tree mode |^spanning-tree mst configuration |^spanning-tree mst instance |^spanning-tree mst instance path-cost |^spanning-tree mst instance priority |^spanning-tree path-cost |^spanning-tree portfast |^spanning-tree portfast bpdu-filter |^spanning-tree portfast bpdu-guard |^spanning-tree priority |^speed |^ssh |^ssh client connect-timeout |^ssh client port |^ssh client session-timeout |^ssh client version |^ssh server |^ssh server allow-users |^ssh server authentication |^ssh server deny-users |^ssh server login-timeout |^ssh server max-startups |^ssh server resolve-hosts |^ssh server scp |^ssh server session-timeout |^ssh server sftp |^stack enable |^stack management subnet |^stack management vlan |^stack priority |^stack renumber |^stack virtual-chassis-id |^stack virtual-mac |^static-channel-group |^storm-action |^storm-control level |^storm-downtime |^storm-protection |^storm-rate |^storm-window |^subnet-mask |^summary-address |^switch card provision |^synchronization |^tacacs-server host |^tacacs-server key |^tacacs-server timeout |^telnet |^telnet server |^terminal length |^terminal monitor |^test |^thrash-limiting |^time |^timeout |^timers basic |^timers bgp |^timers spf |^timers spf exp |^traceroute |^transition-mode |^trap |^trigger |^trigger activate |^trust dscp |^type atmf node |^type chassis active-cfc-fail |^type chassis card |^type chassis disabled-cfc |^type cpu |^type interface |^type issu |^type memory |^type periodic |^type ping-poll |^type reboot |^type stack link |^type time |^type usb |^udld aggressive-mode |^udld enable |^udld port |^udld port aggressive-mode |^udld port disable |^udld reset |^udld time disable-period |^udld time message-interval |^up-count |^user |^username |^version |^virtual-ip |^virtual-ipv6 |^vlan classifier activate |^vlan classifier group |^vlan classifier rule |^vlan database|^wait |^write file |^write memory |^write terminal |^wrr-queue disable queues |^wrr-queue egress-rate-limit |^wrr-queue queue-limit",
+			"name": "support.class.awplus"
+		},
+		{ "match": "switchport(\n| access vlan| atmf-crosslink atmf-link enable vlan| mode| mode private-vlan| mode private-vlan trunk promiscuous | mode private-vlan trunk secondary | port-security | port-security aging | port-security maximum | port-security violation | private-vlan host-association | private-vlan mapping | trunk allowed vlan | trunk native vlan | vlan-stacking | voice dscp | voice vlan| voice vlan priority)",
+			"name": "support.class.awplus"
+		},
+
+		{ "match": "^(no )?service",
+			"name": "keyword.control.awplus"
+		},
+
+		{ "match": "(?<=service )(dhcp-relay|dhcp-server|dhcp-snooping|http|password-encryption|power-inline|ssh|telnet|terminal-length)",
+			"name": "support.class"
+		},
+
+		{ "match": "remark new-cos |remark-map ",
+			"name": "support.class.awplus"
+		}
+
+
+	],
+	"uuid": "f788f425-7860-4f25-86db-6c3c5b04cd24"
+}
