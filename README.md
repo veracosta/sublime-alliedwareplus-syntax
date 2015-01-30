@@ -11,4 +11,4 @@ Clone the repository in your Sublime Text "Packages" directory:
 
 ## Author
 
-[juicysardine](https://twitter.com/juicysardine)
+[kveracosta](https://twitter.com/kveracosta)
