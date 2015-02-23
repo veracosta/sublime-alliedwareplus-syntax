@@ -91,7 +91,7 @@
 			"name": "keyword.control.awplus"
 		},
 
-		{ "match": "\\d+\\.\\d+\\.\\d+\\.\\d+?",
+		{ "match": "\\d+\\.\\d+\\.\\d+\\.\\d+?(\\s|(?=/))",
 			"name": "constant.numeric.awplus"
 		},
 

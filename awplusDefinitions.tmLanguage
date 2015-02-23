@@ -150,7 +150,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\d+\.\d+\.\d+\.\d+?</string>
+			<string>\d+\.\d+\.\d+\.\d+?(\s|(?=/))</string>
 			<key>name</key>
 			<string>constant.numeric.awplus</string>
 		</dict>
