@@ -60,13 +60,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string> (port|sa|po|vlan|eth)</string>
+			<string>(\s|(?&lt;=-))(port|sa|po|vlan|eth)(?=\d)</string>
 			<key>name</key>
 			<string>string.unquoted.awplus</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=port)\d</string>
+			<string>(?&lt;=port|sa|po)\d</string>
 			<key>name</key>
 			<string>variable.parameter.awplus</string>
 		</dict>

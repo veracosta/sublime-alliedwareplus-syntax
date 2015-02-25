@@ -36,10 +36,10 @@
 			"name": "support.function.awplus"
 		},
 
-		{ "match": " (port|sa|po|vlan|eth)",
+		{ "match": "(\\s|(?<=-))(port|sa|po|vlan|eth)(?=\\d)",
 			"name": "string.unquoted.awplus"
 		},
-		{ "match": "(?<=port)\\d",
+		{ "match": "(?<=port|sa|po)\\d",
 			"name": "variable.parameter.awplus"
 		},
 		{ "match": "(?<=port\\d\\.)\\d{1,2}",
